@@ -50,7 +50,7 @@ func serverStaticRouter(ctx *context.Context) {
 			continue
 		}
 		if strings.HasPrefix(requestPath, prefix) {
-			if len(requestPath) > len(prefix) && requestPath[len(prefix)] != '/' {
+			if len(requestPath) > len(prefix) && requestPath[len(prefix)] != '/' && prefix != "/" {
 				continue
 			}
 			file := path.Join(staticDir, requestPath[len(prefix):])
